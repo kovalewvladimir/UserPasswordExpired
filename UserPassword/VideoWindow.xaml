@@ -1,0 +1,44 @@
+﻿<Window x:Class="UserPassword.VideoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserPassword"
+        mc:Ignorable="d"
+        Title="Инструкция" 
+        Height="450" Width="800"
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize"  
+        Topmost="True" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center" >
+                <Button Name="bt_play"
+                    Content="Воспроизвести"
+                    Margin="0,0,5,0" 
+                    Click="bt_play_Click"/>
+                <Button Name="bt_pause"
+                    Content="Пауза"
+                    Margin="0,0,5,0" 
+                    Click="bt_pause_Click"/>
+                <Button Name="bt_stop"
+                    Content="Стоп" 
+                    Click="bt_stop_Click"/>
+            </StackPanel>
+            <Label Name="lbl_status"
+                   Content="0"
+                   HorizontalAlignment="Center"/>
+        </StackPanel>
+        <MediaElement Name="me_video" 
+                      Grid.Row="1"
+                      Margin="5"
+                      Volume="0"
+                      LoadedBehavior="Manual"
+                      UnloadedBehavior="Manual"/>
+    </Grid>
+</Window>

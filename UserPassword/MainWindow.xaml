@@ -1,0 +1,50 @@
+﻿<Window x:Class="UserPassword.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserPassword"
+        mc:Ignorable="d"
+        Title="Рекомендуется изменить ваш пароль" 
+        Height="275" 
+        Width="350" 
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize"  
+        Topmost="True">
+    <Grid>
+        <StackPanel>
+            <Label 
+                Content="Рекомендуется изменить ваш пароль" 
+                HorizontalAlignment="Center" 
+                FontWeight="Bold" 
+                FontSize="14" />
+            <Button Content="Инструкция"
+                    Width="100" 
+                    Click="Button_Click"/>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <Label Content="Ваш пароль действительный до" 
+                       HorizontalAlignment="Left"/>
+                <Label Name="lbl_time"
+                       Content="дд.мм.гггг"
+                       FontWeight="Bold" 
+                       HorizontalAlignment="Left"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center">
+                <Label Content="Требования к паролю:" 
+                       HorizontalAlignment="Left"/>
+                <Label Content="- не содержать имени учетной записи" 
+                       HorizontalAlignment="Left"/>
+                <Label Content="- длина не менее 8 знаков" 
+                       HorizontalAlignment="Left"/>
+                <Label Content="- содержать заглавные буквы" 
+                       HorizontalAlignment="Left"/>
+                <Label Content="- содержать строчные буквы" 
+                       HorizontalAlignment="Left"/>
+                <Label Content="- содержать цифры или спец знаки (#,@,$ и тп.)" 
+                       HorizontalAlignment="Left"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
