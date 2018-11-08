@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using System.Windows;
 
 namespace UserPassword
@@ -15,6 +10,13 @@ namespace UserPassword
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+            Process thisProc = Process.GetCurrentProcess();
+            if (Process.GetProcessesByName(thisProc.ProcessName).Length > 1)
+            {
+                Application.Current.Shutdown();
+                return;
+            }
+
             if (e.Args.Length == 1)
             {
                 MainWindow mainWindows = new MainWindow(e.Args[0]);
